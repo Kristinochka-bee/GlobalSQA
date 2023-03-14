@@ -57,6 +57,8 @@ public class SamplePage {
     @FindBy(xpath = "//button[normalize-space()='Alert Box : Click Here']")
     WebElement clickHereAlertBox;
 
+    @FindBy(xpath = "(//button[normalize-space()='Submit'])[1]")
+    WebElement submitButton;
 
     public void fillData(String name, String email, String website) {
         nameFill.clear();
@@ -84,6 +86,10 @@ public class SamplePage {
     }
     public void clickAlertBox(){
         clickHereAlertBox.click();
+    }
+
+    public void clickSubmitButton(){
+        submitButton.click();
     }
 
     public String getAlertText(){
