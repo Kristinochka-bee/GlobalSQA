@@ -16,6 +16,9 @@ public class MassageSent {
     @FindBy(xpath = "//blockquote//p[1]")
     WebElement savedTextName;
 
+    @FindBy(xpath = "//blockquote//p[2]")
+    WebElement savedEmailText;
+
 
     public String getTextForm(){
         return savedTextForm.getText();
@@ -23,4 +26,12 @@ public class MassageSent {
     public String getTextFormName(){
         return savedTextName.getText();
     }
+
+    public String getTextFormEmail(){
+        return savedEmailText.getText();
+    }
+
+
+
+
 }

@@ -43,17 +43,20 @@ public class SamplePageTest extends TestBase{
 
         massageSent = new MassageSent(driver);
         Thread.sleep(5000);
+
+        Assert.assertTrue(massageSent.getTextForm().contains("Name: " + name));
+        Assert.assertTrue(massageSent.getTextForm().contains("Email: " + email));
+        Assert.assertTrue(massageSent.getTextForm().contains("Website: " + website));
+        Assert.assertTrue(massageSent.getTextForm().contains("Experience (In Years): 1-3"));
+        Assert.assertTrue(massageSent.getTextForm().contains("Expertise :: Functional Testing"));
+        Assert.assertTrue(massageSent.getTextForm().contains("Education: Other"));
+        Assert.assertTrue(massageSent.getTextForm().contains("Comment: " + comment));
+
+
+        /*
         Assert.assertTrue(massageSent.getTextFormName().contains("Name: " + name));
-        Assert.assertTrue(massageSent.getTextFormName().contains("Email: " + email));
-        Assert.assertTrue(massageSent.getTextFormName().contains("Website: " + website));
-        Assert.assertTrue(massageSent.getTextFormName().contains("Experience (In Years): " + massageSent.getTextForm()));
-        Assert.assertTrue(massageSent.getTextFormName().contains("Expertise :: " + massageSent.getTextForm()));
-        Assert.assertTrue(massageSent.getTextFormName().contains("Education: " + massageSent.getTextForm()));
-        Assert.assertTrue(massageSent.getTextFormName().contains("Comment: " + comment));
-
-
-
-
+        Assert.assertTrue(massageSent.getTextFormEmail().contains("Email: " + email));
+         */
 
 
     }
