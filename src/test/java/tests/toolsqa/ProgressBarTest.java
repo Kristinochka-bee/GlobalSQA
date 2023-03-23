@@ -9,7 +9,7 @@ import tests.TestBase;
 public class ProgressBarTest extends TestBase {
     ProgressBar progressBar;
     String url = "https://demoqa.com/progress-bar";
-    String percent = "37";
+    String percent = Integer.toString(faker.number().numberBetween(1, 99));
     String progressValue ;
 
 
@@ -25,5 +25,6 @@ public class ProgressBarTest extends TestBase {
         progressBar.clickToStop(percent);
         progressValue = progressBar.getAttributeValue(); //запишет значение атрибута в данную переменную
         Assert.assertEquals(progressValue,percent);
+        System.out.println(percent);
     }
 }

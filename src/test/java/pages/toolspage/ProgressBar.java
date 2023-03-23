@@ -34,11 +34,11 @@ public class ProgressBar {
         return progressBar.getAttribute(ATTRIBUTE_NAME);
     }
 
-    public void waitPercentExplicit(String percent){
+    public void waitPercentExplicit(String percent){   //для нединамических проверок
         new WebDriverWait(driver, Duration.ofSeconds(60)).until(ExpectedConditions.attributeToBe(progressBar, ATTRIBUTE_NAME, percent));
     }
 
-    public void waitPercentFluent(String percent){
+    public void waitPercentFluent(String percent){   //для динамических проверок
         new FluentWait<WebDriver>(driver)
                 .withTimeout(Duration.ofSeconds(60)) //в течении 60 секунд
                 .pollingEvery(Duration.ofNanos(2000000)) //осматривать страницу каждые 0,002 сек

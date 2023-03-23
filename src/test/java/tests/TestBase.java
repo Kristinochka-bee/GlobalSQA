@@ -1,5 +1,6 @@
 package tests;
 
+import com.github.javafaker.Faker;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -10,6 +11,8 @@ import java.time.Duration;
 
 public class TestBase {
     protected WebDriver driver;
+
+    protected  Faker faker = new Faker();
     String urlGlobalSqa = "https://www.globalsqa.com/samplepagetest/";
     String urlToolsQA = "https://demoqa.com/automation-practice-form";
 
