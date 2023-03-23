@@ -11,13 +11,14 @@ import java.time.Duration;
 public class TestBase {
     protected WebDriver driver;
     String urlGlobalSqa = "https://www.globalsqa.com/samplepagetest/";
+    String urlToolsQA = "https://demoqa.com/automation-practice-form";
 
     @BeforeMethod
     public void setUp() {
         driver = new FirefoxDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        driver.get(urlGlobalSqa);
+       // driver.get(urlGlobalSqa);
     }
 
     @AfterMethod
