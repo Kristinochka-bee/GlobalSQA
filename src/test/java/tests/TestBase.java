@@ -14,8 +14,11 @@ public class TestBase {
     protected WebDriver driver;
 
     protected  Faker faker = new Faker();
-    String urlGlobalSqa = "https://www.globalsqa.com/samplepagetest/";
-    String urlToolsQA = "https://demoqa.com/automation-practice-form";
+    //String urlGlobalSqa = "https://www.globalsqa.com/samplepagetest/";
+    //String urlToolsQA = "https://demoqa.com/automation-practice-form";
+    String BookStory = "https://demoqa.com/books";
+
+
 
     @BeforeMethod
     public void setUp() {
@@ -28,7 +31,8 @@ public class TestBase {
          */
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-       // driver.get(urlGlobalSqa);
+
+        driver.get(BookStory);
     }
 
     @AfterMethod
