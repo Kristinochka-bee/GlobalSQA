@@ -22,6 +22,7 @@ public class AddNewUserTest extends TestBase {
     String password = "A12345asd!";
 
 
+
     @Test
     public void addNewUserAndUserLogin(){
         mainPage = new MainPage(driver);
@@ -34,6 +35,7 @@ public class AddNewUserTest extends TestBase {
         newUserPage = new NewUserPage(driver);
         newUserPage.waitForLoading();
         newUserPage.fillNewUserForm(firstName,lastName,userName,password);
+        newUserPage.verifyreCaptcha();
         newUserPage.clickRegisterButton();
 
         String expectedRegistrAlertText = "User Register Successfully.";
@@ -49,6 +51,8 @@ public class AddNewUserTest extends TestBase {
 
         profilePage = new ProfilePage(driver);
         profilePage.waitForLoading();
+
+
 
     }
 

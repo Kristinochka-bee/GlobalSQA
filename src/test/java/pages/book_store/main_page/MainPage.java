@@ -19,7 +19,7 @@ public class MainPage extends PageBase {
     @FindBy(xpath = "//div[@role='grid']")
     protected WebElement booksTable;
 
-    @FindBy(xpath = "//div[@id=\"login\"]")
+    @FindBy(xpath = "//button[@id=\"login\"]")
     protected WebElement loginButton;
 
     @FindBy(xpath = "//button[@id='submit']")

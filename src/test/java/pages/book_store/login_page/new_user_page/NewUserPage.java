@@ -12,19 +12,19 @@ public class NewUserPage extends PageBase {
         super(driver);
     }
 
-    @FindBy(xpath = "//button[@id=\"userForm\"]")
+    @FindBy(xpath = "//*[@id=\"userForm\"]")
     protected WebElement userForm;
 
-    @FindBy(xpath = "//button[@placeholder=\"First Name\"]")
+    @FindBy(xpath = "//input[@placeholder=\"First Name\"]")
     protected WebElement firstNameInput;
 
-    @FindBy(xpath = "//button[@id=\"lastname\"]")
+    @FindBy(xpath = "//input[@id=\"lastname\"]")
     protected WebElement lastNameInput;
 
-    @FindBy(xpath = "//button[@id=\"userName\"]")
+    @FindBy(xpath = "//input[@id=\"userName\"]")
     protected WebElement userNameInput;
 
-    @FindBy(xpath = "//*[@placeholder=\"UserName\"]")
+    @FindBy(xpath = "//*[@placeholder=\"Password\"]")
     protected WebElement passwordInput;
 
     @FindBy(xpath = "//*[@id=\"register\"]")
@@ -33,6 +33,8 @@ public class NewUserPage extends PageBase {
     @FindBy(xpath = "//*[@id=\"gotologin\"]")
     protected WebElement backToLoginButton;
 
+    @FindBy(xpath = "//body/div[@id='app']/div/div/div/div/div[2]")
+    protected WebElement reCaptcha;
 
 
     public void waitForLoading(){  //ожидание загрузки страницы, проверка на видимость данного элемента
@@ -52,6 +54,9 @@ public class NewUserPage extends PageBase {
     }
     public void clickBackToLoginButton(){
         backToLoginButton.click();
+    }
+    public void verifyreCaptcha(){
+        reCaptcha.submit();
     }
 
 }
