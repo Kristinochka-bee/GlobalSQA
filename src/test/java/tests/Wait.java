@@ -38,5 +38,13 @@ public class Wait {
         }
     }
 
+    public void forClickable(WebElement element) {
+        try {
+            setWait().until(ExpectedConditions.elementToBeClickable(element));
+        } catch (TimeoutException e) {
+            e.printStackTrace();
+        }
+    }
+
 
 }

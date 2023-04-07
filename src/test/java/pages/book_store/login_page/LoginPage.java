@@ -15,10 +15,10 @@ public class LoginPage extends PageBase {
     @FindBy(xpath = "//*[@placeholder=\"UserName\"]")
     protected WebElement userNameInput;
 
-    @FindBy(xpath = "//*[@placeholder=\"UserName\"]")
+    @FindBy(xpath = "//input[@id='password']")
     protected WebElement passwordInput;
 
-    @FindBy(xpath = "//button[@id=\"login\"]")
+    @FindBy(xpath = "//button[@id='login']")
     protected WebElement loginButton;
 
 
@@ -41,7 +41,7 @@ public class LoginPage extends PageBase {
 
 
     public void clickOnloginButton() {
-        click(loginButton);
+        loginButton.click();
     }
 
     public void clickOnNewUserButton() {

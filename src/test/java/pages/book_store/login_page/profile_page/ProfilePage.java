@@ -12,11 +12,42 @@ public class ProfilePage extends PageBase {
     public ProfilePage(WebDriver driver) {
         super(driver);
     }
-    @FindBy(xpath = "//div[@class='text-center button']//button[@id='submit']")
-    protected WebElement deleteAccountButton;
 
-    public void waitForLoading(){  //ожидание загрузки страницы, проверка на видимость данного элемента
+    @FindBy(xpath = "(//*[@class=\"main-header\"]")
+    WebElement mainHeader;
+    @FindBy(xpath = "//div[@class='text-center button']//button[@id='submit']")
+    WebElement deleteAccountButton;
+
+    @FindBy(xpath = "//button[@id='gotoStore']")
+    WebElement goToStoreButton;
+
+    @FindBy(xpath = "(//button[@id='submit'])[3]")
+    WebElement deleteAllBooksButton;
+
+    @FindBy(xpath = "//*[@placeholder=\"Type to search\"]")
+    WebElement searchInput;
+
+    @FindBy(xpath = "//span[@id=\"delete-record-undefined\"]")
+    WebElement deleteIcon;
+
+    public void waitForLoading(){
         wait = new Wait(driver);
-        wait.forVisibility(deleteAccountButton);
+        wait.forVisibility(goToStoreButton);
+        wait.forVisibility(deleteIcon);
+    }
+
+    public void clickOnDeleteAccountButton(){
+        deleteAccountButton.click();
+    }
+    public void clickOnGoToStoreButton(){
+        goToStoreButton.click();
+    }
+
+    public void clickOnDeleteAllBooksButton(){
+        deleteAllBooksButton.click();
+    }
+
+    public void fillSearchFill(String nameOfBook){
+        searchInput.sendKeys(nameOfBook);
     }
 }
